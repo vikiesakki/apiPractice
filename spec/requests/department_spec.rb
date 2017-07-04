@@ -8,8 +8,8 @@ RSpec.describe 'Department API', type: :request do
 	# before(:each) do 
 	# 	http_auth
 	# end
-	describe 'GET /department' do
-		before{ get '/department'}
+	describe 'GET /api/department' do
+		before{ get '/api/department'}
 		it "returns All departments " do 
 			expect(json_parser(response.body)).not_to be_empty
 		end
@@ -18,10 +18,10 @@ RSpec.describe 'Department API', type: :request do
 		end
 	end
 
-	describe 'GET /department/:id' do
+	describe 'GET /api/department/:id' do
 		
 		context "When Record Exists" do
-			before { get "/department/#{department_id}"}
+			before { get "/api/department/#{department_id}"}
 			it "returns Department for particular id" do
 				expect(json_parser(response.body)).not_to be_empty
 				expect(json_parser(response.body)['id']).to eq(department_id)
@@ -33,7 +33,7 @@ RSpec.describe 'Department API', type: :request do
 
 		context "When record Not exists" do
 			
-			before { get "/department/#{sample_id}"}
+			before { get "/api/department/#{sample_id}"}
 			it "returns 404 status code" do
 				expect(response).to have_http_status(404)
 			end
@@ -47,7 +47,7 @@ RSpec.describe 'Department API', type: :request do
 	describe 'POST /department' do
 		let(:department_attribute) {{:name=>'viki',:created_by=>'selvam'}}
 		context "When the request is vald" do
-			before{ post '/department', params: department_attribute}
+			before{ post '/api/department', params: department_attribute}
 			it "creates a Department" do
 				expect(json_parser(response.body)['name']).to eq('viki')
 			end
@@ -56,7 +56,7 @@ RSpec.describe 'Department API', type: :request do
 			end
 		end
 		context "When the invalid Request" do 
-			before { post '/department', params: {name: "viki"}}
+			before { post '/api/department', params: {name: "viki"}}
 			it "Returns the status code 404" do 
 				expect(response).to have_http_status(404)
 			end
@@ -69,7 +69,7 @@ RSpec.describe 'Department API', type: :request do
 	describe 'PUT /department/:id' do
 		
 		context "When successful updation " do 
-			before { put "/department/#{department_id}",params:{name: "velan"}}
+			before { put "/api/department/#{department_id}",params:{name: "velan"}}
 			it "returns the updated value" do 
 				expect(json_parser(response.body)['name']).to eq("velan")
 			end
@@ -79,7 +79,7 @@ RSpec.describe 'Department API', type: :request do
 			end
 		end
 		context "When the record id not there" do 
-			before { put "/department/#{sample_id}",params:{name: "velan"}}
+			before { put "/api/department/#{sample_id}",params:{name: "velan"}}
 
 			it "returns the code 404" do
 				expect(response).to have_http_status(404)
@@ -87,16 +87,16 @@ RSpec.describe 'Department API', type: :request do
 		end
 	end
 
-	describe 'DELETE /department/:id' do
+	describe 'DELETE /api/department/:id' do
 		
 		context "When delete the record" do
-			before { delete "/department/#{department_id}"}
+			before { delete "/api/department/#{department_id}"}
 			it "returns the status code " do 
 			 	expect(response).to have_http_status(200)
 			end
 		end
 		context "When id is not found" do
-			before { delete "/department/#{sample_id}"}
+			before { delete "/api/department/#{sample_id}"}
 			it "returns the status code 404 " do 
 			 	expect(response).to have_http_status(404)
 			end

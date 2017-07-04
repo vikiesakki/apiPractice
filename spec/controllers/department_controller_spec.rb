@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe DepartmentController, type: :controller do
+RSpec.describe Api::DepartmentController, type: :controller do
 
 end

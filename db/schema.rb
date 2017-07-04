@@ -30,21 +30,6 @@ ActiveRecord::Schema.define(version: 20170704060055) do
     t.index ["department_id"], name: "index_employees_on_department_id"
   end
 
-  create_table "question", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "user_id"
-    t.integer "question_id"
-    t.integer "answer_id"
-  end
-
-  create_table "user_histories", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "user_id"
-    t.integer "login_attempts"
-    t.integer "login_times"
-    t.string "login_agent"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "username"
     t.text "status"
