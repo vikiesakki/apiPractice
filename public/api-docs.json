@@ -4,7 +4,7 @@
   "basePath": "http://localhost:3000/api",
   "apis": [
     {
-      "path": "/api/department.{format}",
+      "path": "/http://localhost:3000/api/department.{format}",
       "description": "Department"
     }
   ],

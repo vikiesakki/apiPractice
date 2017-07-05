@@ -5,7 +5,7 @@
   "resourcePath": "department",
   "apis": [
     {
-      "path": "/api/department",
+      "path": "/api/department.json",
       "operations": [
         {
           "summary": "This api will give the list of all departments",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "path": "/api/department",
+      "path": "/api/department.json",
       "operations": [
         {
           "summary": "This will create the departments",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "path": "/api/department/{id}",
+      "path": "/api/department/{id}.json",
       "operations": [
         {
           "summary": "This api will give the list of all departments",
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "path": "/api/department/{id}",
+      "path": "/api/department/{id}.json",
       "operations": [
         {
           "summary": "This will Update the department",
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "path": "/api/department/{id}",
+      "path": "/api/department/{id}.json",
       "operations": [
         {
           "summary": "This will Delete the department",
