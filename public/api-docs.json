@@ -3,7 +3,10 @@
   "swaggerVersion": "1.2",
   "basePath": "http://localhost:3000/api",
   "apis": [
-
+    {
+      "path": "/api/department.{format}",
+      "description": "Department"
+    }
   ],
   "authorizations": null,
   "info": {

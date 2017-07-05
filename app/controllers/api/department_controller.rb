@@ -1,7 +1,7 @@
 module Api
-	class DepartmentController < ActionController::API
+	class DepartmentController < ActionController::Base
 
-		 include Swagger::Docs::ImpotentMethods
+		 #include Swagger::Docs::ImpotentMethods
 
 		swagger_controller :department, "Department"
 
