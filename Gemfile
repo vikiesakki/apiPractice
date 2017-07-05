@@ -14,6 +14,7 @@ gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'swagger-ui_rails'
+gem 'rack-cors'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
